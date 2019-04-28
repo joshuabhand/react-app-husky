@@ -1,5 +1,25 @@
 This project demonstrates the module Husky.
 
+## The Gist of this approach
+
+Git hooks and scripts are described in package.json
+```
+"husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test"
+	  }
+  }
+```
+The branch deletion exception is contained in .huskyrc
+```
+#!/bin/sh
+grep \(delete\)
+if [ $? -eq 0 ]; then
+# Do not run tests if deleting remote branch
+exit 0
+fi
+```
+
 ## Install Husky
 
 1) "npm install" the new husky module added to package.json
