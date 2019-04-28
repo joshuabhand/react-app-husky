@@ -2,9 +2,11 @@ This project demonstrates the module Husky.
 
 PROS
 - All related hooks and scripts can be conveniently described in package.json
+- If devs are up-to-date with dependencies, pre-push hooks will run
 
 CONS
-- The .huskyrc file needs to be added to the ~ directory which is outside of the project directory.
+- The .huskyrc file needs to be added to the ~ directory which is outside of the project directory
+- If devs forget this file, pre-push hook runs every time git push is called
 
 ## The Gist of this approach
 
