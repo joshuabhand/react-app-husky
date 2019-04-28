@@ -1,0 +1,6 @@
+#!/bin/sh
+grep \(delete\)
+if [ $? -eq 0 ]; then
+# Do not run tests if deleting remote branch
+exit 0
+fi
