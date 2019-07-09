@@ -1,4 +1,4 @@
-This project demonstrates the module Husky.
+This project demonstrates the module Husky. This adds pre-push hooks to our project that are platform independent and standard.
 
 PROS
 - All related hooks and scripts can be conveniently described in package.json
@@ -31,10 +31,20 @@ fi
 ## Install Husky
 
 1) "npm install" the new husky module added to package.json
-2) Copy .huskyrc file into ~ (Home directory; usually something like C:/Users/<profile_name>)
-
-There should be few problems if any during installation and usage.
-I'm preferring this module over pre-push.
+*You may need to run cmd as admin or higher privilege
+2) Copy .huskyrc into ~ (Home directory)
+3) Test pre-push hooks
+	1. git push a valid commit (tests passing)
+	
+		**lint & tests will run and push will succeed**
+	
+	2. git push an invalid commit (tests failing)
+	
+		**lint or tests will run and push will fail**
+	
+	3. git push to delete a remote branch	
+	
+		**lint & tests will not run due to exception in .huskyrc**
 
 ## More info
 
